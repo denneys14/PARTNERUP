@@ -4,7 +4,8 @@ class PartnersController < ApplicationController
   end
 
   def show
-    @parter = Partner.find(params[:id])
+    @partner = Partner.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -15,7 +16,7 @@ class PartnersController < ApplicationController
     @partner = Partner.new(partner_params)
     @partner.user = current_user
     if @partner.save
-      redirect_to ###(@partner)
+      redirect_to partner_path(@partner)
     else
       render :new
     end
@@ -28,7 +29,13 @@ class PartnersController < ApplicationController
   def update
     @partner = Partner.find(params[:id])
     @partner.update(params[:partner])
-    redirect_to ##(@parnter)
+    redirect_to partner_path(@parnter)
+  end
+
+  def destroy
+    @partner = Partner.find(parms[:id])
+    @partner.destroy
+    redirect_to partners_path
   end
 
   private
