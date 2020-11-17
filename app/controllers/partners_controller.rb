@@ -28,8 +28,12 @@ class PartnersController < ApplicationController
 
   def update
     @partner = Partner.find(params[:id])
-    @partner.update(params[:partner])
-    redirect_to partner_path(@parnter)
+
+    if @partner.update(partner_params)
+      redirect_to partner_path(@partner)
+    else
+      render :edit
+    end
   end
 
   def destroy
