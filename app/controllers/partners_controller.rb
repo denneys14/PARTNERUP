@@ -4,7 +4,8 @@ class PartnersController < ApplicationController
   end
 
   def show
-    @parter = Partner.find(params[:id])
+    @partner = Partner.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
