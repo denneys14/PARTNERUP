@@ -1,0 +1,16 @@
+<%= form_for(@partner) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
+  <%= f.label :duty %>
+  <%= f.text_field :duty %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Partner', partner_path %>

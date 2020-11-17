@@ -21,6 +21,16 @@ class PartnersController < ApplicationController
     end
   end
 
+  def edit
+    @partner = Partner.find(params[:id])
+  end
+
+  def update
+    @partner = Partner.find(params[:id])
+    @partner.update(params[:partner])
+    redirect_to ##(@parnter)
+  end
+
   private
 
   def partner_params
