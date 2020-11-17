@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = Booking.where(user: current_user)
   end
@@ -14,10 +13,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user
-    @booking.partner_id = Partner.find(params[:partner_id])
-    if @booking.save
-      redirect_to partner_path(@partner)
+    @booking.user = current_user
+    @booking.partner_id = Partner.find(params[:partner_id]).id
+    if @booking.save!
+      redirect_to "/partners/#{@booking.user_id}"
     else
       render :new
     end
