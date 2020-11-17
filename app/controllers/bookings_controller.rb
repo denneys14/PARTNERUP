@@ -1,20 +1,21 @@
 class BookingsController < ApplicationController
 
   def index
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
   end
 
   def new
-    @partner = Partner.find(params[:cocktail_id])
+    @partner = Partner.find(params[:partner_id])
     @booking = Booking.new
   end
 
   def create
-    @booking = Dose.new(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.user_id = current_user
-    @booking.partner_id = Partner.find(params[:cocktail_id])
+    @booking.partner_id = Partner.find(params[:partner_id])
     if @booking.save
       redirect_to partner_path(@partner)
     else
@@ -25,6 +26,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:dose).permit(:start_time, :end_time, :ingredient_id)
+    params.require(:booking).permit(:start_time, :end_time)
   end
 end
