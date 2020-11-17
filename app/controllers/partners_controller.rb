@@ -21,6 +21,12 @@ class PartnersController < ApplicationController
     end
   end
 
+  def destroy
+    @partner = Partner.find(parms[:id])
+    @partner.destroy
+    redirect_to "/partners"
+  end
+
   private
 
   def partner_params
