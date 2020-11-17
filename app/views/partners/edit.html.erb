@@ -1,16 +1,13 @@
-<%= form_for(@partner) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :gender %>
-  <%= f.text_field :gender %>
-  <%= f.label :duty %>
-  <%= f.text_field :duty %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-  <%= f.input :photo, as: :file %>
+<div class="container">
+<%= simple_form_for(@partner) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :gender %>
+  <%= f.input :duty %>
+  <%= f.input :description %>
+  <%= f.input :age %>
   <%= f.submit %>
 <% end %>
-
 <%= link_to 'Partner', partner_path %>
+</div>
+
+<%= "need to add somethin to push and pull" %>
