@@ -13,8 +13,7 @@ class PartnersController < ApplicationController
 
   def create
     @partner = Partner.new(partner_params)
-    @user = User.find(params[:user])
-    @partner.user = @user.id
+    @partner.user = current_user
     if @partner.save
       redirect_to ###(@partner)
     else
