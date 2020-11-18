@@ -1,8 +1,13 @@
 <div class="container">
   <h2>Congratulation your booking is confirmed</h2>
 
-  <!-- input from booking form -->
-  <%= @booking.last %>
+
+<div>
+<p><%= @booking.start_time %></p>
+<p><%= @booking.end_time %></p>
+<p><%= @booking.date %></p>
+</div>
+
 
   <%= link_to "Bookings", partners_path, class: "btn btn-ghost" %>
 </div>
