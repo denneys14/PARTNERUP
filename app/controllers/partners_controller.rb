@@ -38,8 +38,8 @@ class PartnersController < ApplicationController
   end
 
   def destroy
-    # authorize @partner
     @partner = Partner.find(params[:id])
+    authorize @partner
     @partner.destroy
     redirect_to partners_path
   end
