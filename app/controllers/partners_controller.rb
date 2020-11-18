@@ -6,6 +6,7 @@ class PartnersController < ApplicationController
 
   def show
     @partner = Partner.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -45,6 +46,6 @@ class PartnersController < ApplicationController
   private
 
   def partner_params
-    params.require(:partner).permit(:duty, :name, :gender, :age, :description)
+    params.require(:partner).permit(:duty, :name, :gender, :age, :description, :photo)
   end
 end

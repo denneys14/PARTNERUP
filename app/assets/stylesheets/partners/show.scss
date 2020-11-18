@@ -1,15 +1,18 @@
-.card-partner {
-  overflow: hidden;
+.card-show {
   margin-top: 100px;
   margin-left: 50px;
+  margin-bottom: 70px;
   margin-right: 200px;
+}
+
+.card-show .card-partner {
+  overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
-
 }
 
-.card-partner .card-product {
+.card-show .card-partner .card-product {
   overflow: hidden;
   height: 220px;
   background: white;
@@ -18,7 +21,7 @@
   margin-bottom: 10px;
 }
 
-.card-partner .card-product img {
+.card-show .card-partner .card-product img {
   height: 90%;
   width: 160px;
   object-fit: cover;
@@ -27,14 +30,14 @@
   border-radius: 10px;
 }
 
-.card-partner .card-product .card-product-infos h2 {
+.card-show .card-partner .card-product .card-product-infos h2 {
   font-size: 25px;
   font-weight: bold;
   margin: 0;
   padding-left: 10px;
 }
 
-.card-partner .card-product .card-product-infos p {
+.card-show .card-partner .card-product .card-product-infos p {
   font-size: 16px;
   line-height: 1.4;
   opacity: .7;
@@ -44,29 +47,61 @@
 }
 
 
-.card-partner .card-product .card-product-infos {
+.card-show .card-partner .card-product .card-product-infos {
   padding: 16px;
 }
 
-
-.card-partner .card-description {
+.card-show .card-partner .card-description {
   padding: 16px;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
 
-.card-partner .card-description h3 {
+.card-show .card-partner .card-description h3 {
   font-size: 20px;
   font-weight: bold;
   margin: 10;
 }
 
-.card-partner .card-description p {
+.card-show .card-partner .card-description p {
   font-size: 16px;
   opacity: .7;
   margin-top: 10;
   margin-bottom:50px;
+}
+
+.card-show .card-booking {
+  overflow: hidden;
+  margin-top:20px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.card-show .card-booking .booking-form {
+  overflow: hidden;
+  display: flex;
+  margin-bottom:20px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  align-items: inherit;
+  margin-bottom: 24px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
 }
 
 
