@@ -4,10 +4,16 @@
     <% @partners.each do |partner| %>
       <div class="col-md-4 mb-4">
         <div class="card-trip">
-          <%= cl_image_tag("ej1l5rcyterspi4cwqht", width: 400, height: 300, crop: :fill) %>
+          <% if partner.photo.attached? %>
+            <%= cl_image_tag partner.photo.key, height: 400, width: 500 %>
+          <% elsif partner.url_photo %>
+            <img src="<%= partner.url_photo %>">
+          <% else %>
+           <%= cl_image_tag("ej1l5rcyterspi4cwqht", width: 400, height: 300, crop: :fill) %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
-              <h2><%= link_to partner.duty, partner_path(partner) %></li>
+              <h2><%= link_to partner.duty, partner_path(partner) %></h2>
               <p><%= partner.description %></p>
               <p><%= partner.age %></p>
             </div>
