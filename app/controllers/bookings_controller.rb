@@ -7,8 +7,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  end
-
   def new
     @partner = Partner.find(params[:partner_id])
     @booking = Booking.new
@@ -30,5 +28,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_time, :end_time)
   end
-
 end
