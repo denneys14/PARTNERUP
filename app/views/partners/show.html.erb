@@ -13,12 +13,6 @@
     <div class="card-description" >
       <h3>Description:</h3>
       <p><%= @partner.description %></p>
-      <% if policy(@partner).edit? %>
-        <%= link_to "Update", edit_partner_path(@partner) %> |
-      <% end %>
-      <% if policy(@partner).edit? %>
-        <%= link_to "Remove Listing", partner_path(@partner[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
     </div>
   </div>
 
