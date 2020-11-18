@@ -1,8 +1,4 @@
 class PartnerPolicy < ApplicationPolicy
-  def create?
-    return true
-  end
-
   def update?
     record.user == user
   end
