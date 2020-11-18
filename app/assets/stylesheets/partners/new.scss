@@ -1,6 +1,15 @@
-.form-container {
-  margin: 0;
-  width: 210px;
-  background-color: white;
-  box-shadow: 1px 2px 15px lightgrey;
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  align-items: inherit;
+  margin-bottom: 24px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
 }
