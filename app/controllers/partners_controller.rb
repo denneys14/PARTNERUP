@@ -1,7 +1,7 @@
 class PartnersController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @partners = Partner.all
+    @partners = policy_scope(Partner)
   end
 
   def show
@@ -29,7 +29,7 @@ class PartnersController < ApplicationController
 
   def update
     @partner = Partner.find(params[:id])
-
+    authorize @partner
     if @partner.update(partner_params)
       redirect_to partner_path(@partner)
     else
@@ -38,7 +38,8 @@ class PartnersController < ApplicationController
   end
 
   def destroy
-    @partner = Partner.find(parms[:id])
+    @partner = Partner.find(params[:id])
+    authorize @partner
     @partner.destroy
     redirect_to partners_path
   end
