@@ -16,5 +16,12 @@
 @import "partners/show";
 @import "partners/edit";
 
-// Your CSS partials for partners
+// Your CSS partials for booking
 @import "bookings/show";
+
+// Your CSS partials for registration
+@import "registrations/edit";
+@import "registrations/new";
+
+// Your CSS partials for sessions
+@import "sessions/new";
