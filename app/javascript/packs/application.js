@@ -38,3 +38,12 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+const searchTog = document.querySelector(".search-toggler");
+const searchbar = document.querySelector(".searchbar");
+
+
+searchTog.addEventListener('click', (event) => {
+  console.log(event);
+  searchbar.classList.toggle("show")
+});

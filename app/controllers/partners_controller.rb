@@ -8,6 +8,11 @@ class PartnersController < ApplicationController
         lat: partner.latitude,
         lng: partner.longitude
       }
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR duty ILIKE :query"
+      @partners = policy_scope(Partner).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @partners = policy_scope(Partner)
     end
   end
 

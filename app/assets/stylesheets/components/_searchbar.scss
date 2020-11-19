@@ -1,0 +1,10 @@
+.searchbar {
+  position: fixed;
+  top: 80px;
+  right: 10px;
+  display: none;
+}
+.show {
+  display: flex;
+  z-index: 1;
+}
