@@ -2,6 +2,13 @@ class PartnersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
     @partners = policy_scope(Partner)
+
+    @markers = @partners.geocoded.map do |partner|
+      {
+        lat: partner.latitude,
+        lng: partner.longitude
+      }
+    end
   end
 
   def show
