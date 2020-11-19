@@ -2,7 +2,7 @@ class PartnersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
     if params[:query].present?
-      @partners = policy_scope(Partner).where(duty: params[:query])
+      @partners = policy_scope(Partner).where("duty ILIKE ?", "%#{params[:query]}%")
     else
       @partners = policy_scope(Partner)
     end
