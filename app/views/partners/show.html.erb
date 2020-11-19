@@ -2,7 +2,11 @@
 <div class="card-show" >
   <div class="card-partner ">
     <div class="card-product">
-      <img src="https://i.pinimg.com/originals/79/29/51/792951a5fd18aa38ff231e7ef44b8e17.jpg">
+      <% if @partner.photo.attached?%>
+        <%= cl_image_tag @partner.photo.key, height: 500, width: 700, crop: :fill %>
+      <% else @partner.url_photo%>
+        <%= cl_image_tag @partner.url_photo, height: 500, width: 600 %>
+      <% end %>
       <div class="card-product-infos">
         <h2><%= @partner.name %></h2>
         <p>Gender: <%= @partner.gender %></p>
@@ -14,16 +18,16 @@
       <h3>Description:</h3>
       <p><%= @partner.description %></p>
       <% if policy(@partner).edit? %>
-        <%= link_to "Update", edit_partner_path(@partner) %> |
+        <%= link_to "Update", edit_partner_path(@partner), class: "btn btn-ghost mt-3" %>
       <% end %>
       <% if policy(@partner).edit? %>
-        <%= link_to "Remove Listing", partner_path(@partner[:id]), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Remove Listing", partner_path(@partner[:id]), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost mt-3" %>
       <% end %>
     </div>
   </div>
 
   <div class="card-booking">
-    <div class="row justify-content-center">
+    <div class="row justify-content">
       <div class="booking-form mt-5">
         <div class="col-12">
           <h3>Book now!</h3>
