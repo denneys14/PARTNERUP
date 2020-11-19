@@ -4,15 +4,16 @@ class PartnersController < ApplicationController
     @partners = policy_scope(Partner)
 
     @markers = @partners.geocoded.map do |partner|
-      {
-        lat: partner.latitude,
-        lng: partner.longitude
-      }
-    if params[:query].present?
-      sql_query = "name ILIKE :query OR duty ILIKE :query"
-      @partners = policy_scope(Partner).where(sql_query, query: "%#{params[:query]}%")
-    else
-      @partners = policy_scope(Partner)
+        {
+          lat: partner.latitude,
+          lng: partner.longitude
+        }
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR duty ILIKE :query"
+        @partners = policy_scope(Partner).where(sql_query, query: "%#{params[:query]}%")
+      else
+        @partners = policy_scope(Partner)
+      end
     end
   end
 
