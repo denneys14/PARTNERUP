@@ -11,20 +11,25 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"> <!-- add js active taggs through toggle -->
-        <%= link_to "Home", "/partners", class: "nav-link" %>
-      </li>
+      <% unless ["index"].include?(params[:action]) %>
+        <li class="nav-item">
+          <%= link_to "Index", "/partners", class: "nav-link" %>
+          <%#= link_to "Search", "#", class: "nav-link" %>
+        </li>
+      <% end %>
+      <!-- <li class="nav-item"> add js active taggs through toggle -->
+        <%#= link_to "Index", "/partners", class: "nav-link" %>
+      <!-- </li> -->
       <li class="nav-item">
         <%= link_to "Add partner", "/partners/new", class: "nav-link" %>
       </li>
 
-      <%# if ["partners"].include?(params[:action]) %>
-        <%#= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
-          <!-- <div class="form-group"> -->
-            <%#= text_field_tag :search, params[:search], placeholder: "Search your product?", class: "form-control" %>
-          <!-- </div> -->
-        <%# end %>
-      <%# end %>
+      <% if ["index"].include?(params[:action]) %>
+          <li class="nav-item">
+            <p class="nav-link search-toggler">Search</p>
+            <%#= link_to "Search", "#", class: "nav-link" %>
+          </li>
+      <% end %>
       <!-- <li class="nav-item"> -->
         <%#= link_to "Search", "#", class: "nav-link searchbar-toggler" %>
       <!-- </li> -->
