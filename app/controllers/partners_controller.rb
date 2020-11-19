@@ -1,7 +1,11 @@
 class PartnersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @partners = policy_scope(Partner)
+    if params[:query].present?
+      @partners = policy_scope(Partner).where(duty: params[:query])
+    else
+      @partners = policy_scope(Partner)
+    end
   end
 
   def show

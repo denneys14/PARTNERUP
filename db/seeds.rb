@@ -10,6 +10,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Booking.delete_all
+Partner.delete_all
+User.delete_all
 
 user_one = User.create(email: 'max@example.com', password: '123456')
 partner_one = Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
@@ -23,3 +26,13 @@ user_five = User.create(email: 'kwiwi@example.com', password: '123456')
 partner_five = Partner.create(user: user_five, name: 'kate', gender: 'f', duty: "walks your squirrel", url_photo: "https://images.unsplash.com/photo-1464536194743-0c49f0766ef6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
 user_six = User.create(email: 'kkll@example.com', password: '123456')
 partner_six = Partner.create(user: user_six, name: 'soph', gender: 'f', duty: "cleans your ladybug", url_photo: "https://images.unsplash.com/photo-1585676737728-432f58d5fdba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
+
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
+Partner.create(user: user_one, name: 'max', gender: 'f', duty: "walks your dog", url_photo: "https://i.pinimg.com/originals/67/01/12/670112585c6ae56bfd91cfa799025560.jpg")
