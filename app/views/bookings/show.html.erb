@@ -1,13 +1,14 @@
-<div class="container">
-  <h2>Congratulation your booking is confirmed</h2>
-
-
-<div>
-<p><%= @booking.start_time %></p>
-<p><%= @booking.end_time %></p>
-<p><%= @booking.date %></p>
+<div class="booking-container">
+  <h3><strong>Congratulation,</strong> your booking is confirmed!</h3>
+  <div class="booking-description">
+    <p>Starting Time: </p>
+    <%= @booking.start_time %>
+    <p>Ending Time: </p>
+    <%= @booking.end_time %>
+    <p>Date: </p>
+    <%= @booking.date %>
+  </div>
+  <%= link_to " My Dashboard", partners_path, class: "btn btn-ghost" %>
 </div>
 
 
-  <%= link_to "Bookings", partners_path, class: "btn btn-ghost" %>
-</div>
