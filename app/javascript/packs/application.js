@@ -45,8 +45,11 @@ const searchTog = document.getElementById("search-toggler");
 searchTog.addEventListener('click', (event) => {
   console.log(event);
   const searchBar = document.getElementById("search-bar");
-  console.log(searchBar);
-  searchBar.style.display="block"
+  if (searchBar.style.display == "block") {
+    searchBar.style.display="none"
+  } else {
+    searchBar.style.display="block"
+  }
 });
 
 
