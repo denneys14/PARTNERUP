@@ -39,11 +39,21 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
-const searchTog = document.querySelector(".search-toggler");
-const searchbar = document.querySelector(".searchbar");
+const searchTog = document.getElementById("search-toggler");
 
 
 searchTog.addEventListener('click', (event) => {
   console.log(event);
-  searchbar.classList.toggle("show")
+  const searchBar = document.getElementById("search-bar");
+  if (searchBar.style.display == "block") {
+    searchBar.style.display="none"
+  } else {
+    searchBar.style.display="block"
+  }
 });
+
+
+
+
+
+
