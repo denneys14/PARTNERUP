@@ -8,9 +8,12 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Your CSS partials
+// Your CSS partials for partners
 @import "components/index";
 @import "pages/index";
 @import "partners/new";
 @import "partners/show";
 @import "partners/edit";
+
+// Your CSS partials for partners
+@import "bookings/show";

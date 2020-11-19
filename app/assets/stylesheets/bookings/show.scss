@@ -1,5 +1,5 @@
-.add-container {
-  margin-top: 100px;
+.booking-container {
+  margin-top: 140px;
   margin-left: 50px;
   margin-right: 50px;
   overflow: hidden;
@@ -11,6 +11,24 @@
   padding-right: 20px;
 }
 
+.booking-container h3 {
+  margin-top:10px;
+  margin-bottom: 10px;
+  font-size:25px;
+  margin-left:10px;
+}
+
+.booking-container .booking-description {
+  margin-top:50px;
+  margin-left: 50px;
+  margin-bottom:50px;
+}
+
+.booking-container .booking-description p {
+ text-decoration-line: underline;
+ padding-top: 10px;
+}
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -20,6 +38,7 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
   align-items: inherit;
+  margin-top: 30px;
   margin-bottom: 24px;
 }
 
