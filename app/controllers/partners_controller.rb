@@ -2,13 +2,13 @@ class PartnersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
     @partners = policy_scope(Partner)
-
     @markers = @partners.geocoded.map do |partner|
       {
         lat: partner.latitude,
         lng: partner.longitude
       }
     end
+
     if params[:query].present?
       sql_query = "name ILIKE :query OR duty ILIKE :query"
       @partners = policy_scope(Partner).where(sql_query, query: "%#{params[:query]}%")
@@ -61,6 +61,6 @@ class PartnersController < ApplicationController
   private
 
   def partner_params
-    params.require(:partner).permit(:duty, :name, :gender, :age, :description, :photo, :url_photo)
+    params.require(:partner).permit(:duty, :name, :gender, :age, :description, :photo, :url_photo, :address)
   end
 end
