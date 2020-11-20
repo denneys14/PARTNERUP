@@ -14,17 +14,24 @@
   <div class="dashboard-view2">
     <h3>Your Bookings</h3>
     <% @bookings.each do |booking| %>
-    <p><strong>----------------------</strong></p>
-    <strong>Starttime:</strong>
-    <p><%= booking.start_time %></p>
-    <strong>Endtime:</strong>
-    <p><%= booking.end_time %></p>
-    <strong>Date:</strong>
-    <p><%= booking.date %></p>
+    <div>
+    <p><strong>Name:</strong></p>
+    <p><%= booking.partner.name %></p>
+    <% if booking.partner.photo.attached?%>
+          <%= cl_image_tag booking.partner.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else booking.partner.url_photo%>
+          <p><%= cl_image_tag booking.partner.url_photo, height: 300, width: 400 %></p>
+        <% end %>
+    </div>
+    <div>
+      <strong>Starttime:</strong>
+      <p><%= booking.start_time %></p>
+      <strong>Endtime:</strong>
+      <p><%= booking.end_time %></p>
+      <strong>Date:</strong>
+      <p><%= booking.date %></p>
+    </div>
+    <p>------------------------------------------------</p>
     <% end %>
-  </div>
-  <div class="dashboard-view3">
-    <h3>Your Partner</h3>
-    <%= @partners.name %>
   </div>
 </div>
