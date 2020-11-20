@@ -1,9 +1,30 @@
 <div class="card-dashboard">
   <h1> Dashboard</h1>
-<h3>Your Last Booking</h3>
-  <%= @booking %>
-  <h3>Your Bookings</h3>
-  <%= @bookings %>
-  <h3>Your Partner</h3>
-  <h3><%= @partners.name %></h3>
+  <div class="dashboard-view1">
+  <h3>Your Last Booking</h3>
+    <div class="booking-description">
+      <strong>Starttime:</strong>
+      <p><%= @lastbooking.start_time %></p>
+      <strong>Endtime:</strong>
+      <p><%= @lastbooking.end_time %></p>
+      <strong>Date:</strong>
+      <p><%= @lastbooking.date %></p>
+    </div>
+  </div>
+  <div class="dashboard-view2">
+    <h3>Your Bookings</h3>
+    <% @bookings.each do |booking| %>
+    <p><strong>----------------------</strong></p>
+    <strong>Starttime:</strong>
+    <p><%= booking.start_time %></p>
+    <strong>Endtime:</strong>
+    <p><%= booking.end_time %></p>
+    <strong>Date:</strong>
+    <p><%= booking.date %></p>
+    <% end %>
+  </div>
+  <div class="dashboard-view3">
+    <h3>Your Partner</h3>
+    <%= @partners.name %>
+  </div>
 </div>
