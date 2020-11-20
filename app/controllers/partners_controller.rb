@@ -14,6 +14,7 @@ class PartnersController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query OR duty ILIKE :query"
       @partners = policy_scope(Partner).where(sql_query, query: "%#{params[:query]}%")
+      @error = "sorry we couldn't find a partner by this description" if @partners == []
     else
       @partners = policy_scope(Partner)
     end
