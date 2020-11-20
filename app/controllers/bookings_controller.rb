@@ -1,6 +1,12 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = policy_scope(Booking).where(user: current_user)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR duty ILIKE :query"
+      @bookings = policy_scope(Booking).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bookings = policy_scope(Booking).where(user: current_user)
+    end
+    @partners = policy_scope(Partner).where(user: current_user)
   end
 
   def show

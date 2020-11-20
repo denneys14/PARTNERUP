@@ -1,6 +1,9 @@
-<h1> Dashboard</h1>
-
-<%= @booking %>
-<h3>Your Bookings</h3>
-<%= @bookings %>
-<%= @partners %>
+<div class="card-dashboard">
+  <h1> Dashboard</h1>
+<h3>Your Last Booking</h3>
+  <%= @booking %>
+  <h3>Your Bookings</h3>
+  <%= @bookings %>
+  <h3>Your Partner</h3>
+  <h3><%= @partners.name %></h3>
+</div>
