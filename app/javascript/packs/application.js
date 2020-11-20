@@ -31,23 +31,23 @@ import "bootstrap";
 // import {searchFunction } from "../listener.js"
 import { initMapbox } from '../plugins/init_mapbox';
 
+
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
-const searchTog = document.getElementById("search-toggler");
-searchTog.addEventListener('click', (event) => {
-    const searchBar = document.getElementById("search-bar");
-  // searchBar.style.display="block"
-  if (searchBar.style.display == "block") {
-    searchBar.style.display="none"
-  } else {
-    searchBar.style.display="block"
+  const searchTog = document.getElementById("search-toggler");
+  const searchBar = document.getElementById("search-bar");
+  if (searchTog) {
+  searchTog.addEventListener('click', (event) => {
+    // searchBar.style.display="block"
+    if (searchBar.style.display == "block") {
+      searchBar.style.display="none"
+    } else {
+      searchBar.style.display="block"
+    };
+    console.log(event)
+  });
   };
-  console.log(event)
 });
-
-
-
 
 
 
