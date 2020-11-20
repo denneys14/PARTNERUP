@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
       @bookings = policy_scope(Booking).where(user: current_user)
     end
     @partners = policy_scope(Partner).where(user: current_user)
+    @lastbooking = Booking.last
   end
 
   def show
