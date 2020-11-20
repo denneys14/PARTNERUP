@@ -4,7 +4,9 @@
     <div class="col-12 col-md-6">
       <div class="row">
         <% if @partners == [] %>
-        <h2><%= @error %></h2>
+        <div class="m-3">
+          <h2><%= @error %></h2> <%= link_to "Go back",  "/partners", class: "btn btn-ghost"%>
+        </div>
         <% else %>
           <% @partners.each do |partner| %>
             <div class="col-sm-6 col-md-6 col-xl-4 mb-4">
