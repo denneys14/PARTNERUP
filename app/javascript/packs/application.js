@@ -22,35 +22,31 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-import { initMapbox } from '../plugins/init_mapbox';
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
-
 // External imports
 import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+// import {searchFunction } from "../listener.js"
+import { initMapbox } from '../plugins/init_mapbox';
+
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
+  initMapbox();
+})
 const searchTog = document.getElementById("search-toggler");
-
-
 searchTog.addEventListener('click', (event) => {
-  console.log(event);
-  const searchBar = document.getElementById("search-bar");
+    const searchBar = document.getElementById("search-bar");
+  // searchBar.style.display="block"
   if (searchBar.style.display == "block") {
     searchBar.style.display="none"
   } else {
     searchBar.style.display="block"
-  }
+  };
+  console.log(event)
 });
+
+
 
 
 
