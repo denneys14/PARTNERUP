@@ -5,7 +5,9 @@ class PartnersController < ApplicationController
     @markers = @partners.geocoded.map do |partner|
       {
         lat: partner.latitude,
-        lng: partner.longitude
+        lng: partner.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { partner: partner })
+
       }
     end
 
